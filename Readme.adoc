@@ -1,0 +1,58 @@
+== Neo4j Film Collection Example Application
+
+This example project aims to get you familiar with the graph databases by using Neo4j from Java.
+
+In this example 4 main entities (Actors, Directors, Collectors and Movies) and
+4 related relations (ACTED_IN, DIRECTED, COLLECTS, FOLLOWS) are read from sample text files
+and corresponding graph database is constructed using these models.
+
+Some listing queries running on these models are also implemented in order to show users how to bind database with ui.
+
+It is a quite simple web application that uses film collection dataset to provide a search with listing, a detail view and a graph visualization.
+
+
+=== The Stack
+
+These are the components of our min- Web Application:
+
+* Application Type:         Java-Web Application
+* Web framework:            http://www.sparkjava.com/[Spark-Java] (Micro-Webframework)
+* Neo4j Database Connector: https://github.com/neo4j/neo4j-java-driver[Neo4j-Java-Driver] for Cypher http://neo4j.com/docs/developer-manual/current/#driver-manual-index[Docs]
+* Database:                 Neo4j-Server
+* Frontend:                 jquery, bootstrap, http://d3js.org/[d3.js]
+
+
+=== Example API query
+
+curl http://localhost:8081/route{1-6}
+
+=== Setup
+
+You need to add the dependency to the Neo4j-Java-Driver driver which is required for executing queries  via Neo4j in your `pom.xml`:
+
+[source,xml]
+----
+<dependency>
+    <groupId>org.neo4j.driver</groupId>
+    <artifactId>neo4j-java-driver</artifactId>
+    <version>1.0.0-RC2</version>
+</dependency>
+----
+
+=== Run locally:
+
+When developing with Neo4j, please use JDK 8 and your favorite IDE.
+
+Start your local Neo4j Server (http://neo4j.com/download[Download & Install]).
+
+Start this application using IDE.
+
+Wait for the completion of reading input files and the construction of the your database.
+
+Go to http://localhost:8081
+
+You can select any of the queries and list result according to model id and name.
+
+Go to http://localhost:7474/browser/
+
+You can analyze/visualise your film collection graph database and write different queries manually for testing your system.
