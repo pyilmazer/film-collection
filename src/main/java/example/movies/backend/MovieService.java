@@ -52,6 +52,12 @@ public class MovieService {
 
     }
 
+    public void removeAll(){
+
+            cypher.query("MATCH (n) DETACH DELETE n");
+
+    }
+
     public void addMovie(ArrayList<Movies> movieList){
 
         for (int i = 0; i < movieList.size() ; i++) {

@@ -22,7 +22,6 @@ public class BoltCypherExecutor implements CypherExecutor {
 
     public BoltCypherExecutor(String url, String username, String password) {
         driver =  GraphDatabase.driver(Constants.DRIVER_URL, AuthTokens.basic( username, password ) );
-
     }
 
     @Override

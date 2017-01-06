@@ -108,7 +108,6 @@ public class DataReader {
     }
 
     public static void readFollow(){
-
         try {
             BufferedReader br = new BufferedReader(new FileReader("follow.txt"));
             String line = br.readLine();
@@ -118,6 +117,15 @@ public class DataReader {
                 line = br.readLine();
             }
             br.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
+
+    public static void removeAllNodesRels(){
+        try {
+            mov_service.removeAll();
         }catch (Exception e){
             System.out.println(e);
         }
